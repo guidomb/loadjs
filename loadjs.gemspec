@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = "A Javascript loader function to load page specific code for Rails apps."
   s.description = "A Javascript loader function to load page specific code for Rails apps."
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib,vendor}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", ">= 3.2"
