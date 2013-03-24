@@ -3,6 +3,10 @@ LoadJS
 
 [![Gem Version](https://badge.fury.io/rb/loadjs.png)](http://badge.fury.io/rb/loadjs)
 
+**LoadJS** provides a way to load page-specific Javascript code in a Rails app without loosing the magic
+provided by Sprockets. All your Javascript code will continue by minified in one Javascript file but
+some portions of it will only be executed for certain pages.
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -17,6 +21,40 @@ Or install it yourself as:
 
     $ gem install loadjs
     
+## Usage
+
+After installing the gem, you need to modify your `application.html.erb` and add the following attributes to the `body`
+tag:
+
+```
+<html>
+  <head>
+    ...
+  </head>
+  <body data-controller="<%= controller.controller_name %>" data-action="<%= controller.action_name %>">
+    ...
+  </body>
+</html>
+```
+
+Then you need to require `loadjs` in your application manifest:
+
+```
+//= require loadjs
+```
+
+Finally if you want a block of code just to be excuted for a specific controller and action you must use the `load` 
+function like this:
+
+```javascript
+load({controller: 'foo', action: 'bar'}, function () {
+  alert("Hello World!");
+});
+```
+
+This piece of code will only be evaluated after the DOM has been loaded and only for the controller `foo` and action `bar`.
+If you want to execute a piece of code for all the actions in a controller you can omit the `action` option. 
+
 ## Contributing
 
 1. Fork it
