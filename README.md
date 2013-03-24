@@ -1,3 +1,8 @@
+LoadJS
+======
+
+[![Gem Version](https://badge.fury.io/rb/loadjs.png)](http://badge.fury.io/rb/loadjs)
+
 ## License ##
 
 Copyright 2013 Guido Marucci Blas
