@@ -7,7 +7,7 @@ LoadJS
 
 Add this line to your application's Gemfile:
 
-    gem 'app_configuration'
+    gem 'loadjs'
 
 And then execute:
 
@@ -15,7 +15,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install app_configuration
+    $ gem install loadjs
     
 ## Contributing
 
