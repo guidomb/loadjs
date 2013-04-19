@@ -4,7 +4,13 @@ function load(options, fn) {
     var currentController = body.data("controller");
     var currentAction = body.data("action");
 
-    if (typeof options.controllers !== "undefined") {
+    if (typeof options === "string") {
+      var splitOption = options.split("#");
+      if (splitOption[0] != currentController || splitOption[1] != currentAction) {
+        return;
+      }
+      fn();
+    } else if (typeof options.controllers !== "undefined") {
       for (var controller in options.controllers) {
         var actions = options.controllers[controller];
         if (controller == currentController && actions.length == 0) {
