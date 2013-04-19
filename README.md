@@ -47,13 +47,35 @@ Finally if you want a block of code just to be excuted for a specific controller
 function like this:
 
 ```javascript
-load({controller: 'foo', action: 'bar'}, function () {
+load({controller: 'foo', action: 'bar'}, function (controller, action) {
   alert("Hello World!");
 });
 ```
 
 This piece of code will only be evaluated after the DOM has been loaded and only for the controller `foo` and action `bar`.
 If you want to execute a piece of code for all the actions in a controller you can omit the `action` option. 
+
+You can also use a shorter version like this:
+
+```javascript
+load("foo#bar", function (controller, action) {
+  alert("Hello World!");
+});
+```
+
+If you want a block of code to be executed for multiple controllers and multiple actions you can do it like this:
+
+```javascript
+load({
+    controllers: {
+        controller1: ['action1', 'action2', 'action3'],
+        controller2: ['action2'],
+        controller3: []
+    }
+}, function(controller, action) {
+    alert("Hello " + controller + " and " + action);
+});
+```
 
 ## Contributing
 
