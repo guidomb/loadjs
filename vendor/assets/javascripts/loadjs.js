@@ -9,16 +9,16 @@ function load(options, fn) {
       if (splitOption[0] != currentController || splitOption[1] != currentAction) {
         return;
       }
-      fn();
+      fn(controller, action);
     } else if (typeof options.controllers !== "undefined") {
       for (var controller in options.controllers) {
         var actions = options.controllers[controller];
         if (controller == currentController && actions.length == 0) {
-          fn();
+          fn(controller, action);
         } else {
           for (var i = 0, length = actions.length; i < length; ++i) {
             if (actions[i] == currentAction) {
-              fn();
+              fn(controller, action);
               break;
             }
           }
@@ -29,7 +29,7 @@ function load(options, fn) {
         return;
       }
       if (typeof options.action === "undefined" || options.action == currentAction) {
-        fn();
+        fn(controller, action);
       }
     }
   });
