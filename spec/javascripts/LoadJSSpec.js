@@ -1,4 +1,8 @@
-//describe("Player", function() {
+describe("#load", function() {
+  it("is defined", function() {
+    expect(load).toBeDefined();
+  });
+});
 //  var player;
 //  var song;
 //
@@ -55,4 +59,3 @@
 //      }).toThrow("song is already playing");
 //    });
 //  });
-//});
