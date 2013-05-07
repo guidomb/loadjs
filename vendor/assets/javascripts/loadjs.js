@@ -29,7 +29,7 @@ function load(options, fn) {
         return;
       }
       if (typeof options.action === "undefined" || options.action == currentAction) {
-        fn(controller, action);
+        fn(currentController, currentAction);
       }
     }
   });
