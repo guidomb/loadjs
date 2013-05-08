@@ -1,0 +1,9 @@
+language: ruby
+rvm:
+ - "2.0.0"
+before_install:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+before_script:
+  - "export JASMINE_SPEC_FORMAT=documentation"
+script: "bundle exec rake jasmine:ci"
