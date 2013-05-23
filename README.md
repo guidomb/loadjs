@@ -1,6 +1,7 @@
 LoadJS
 ======
 
+[![Build Status](https://travis-ci.org/guidomb/loadjs.png?branch=master)](https://travis-ci.org/guidomb/loadjs)
 [![Gem Version](https://badge.fury.io/rb/loadjs.png)](http://badge.fury.io/rb/loadjs)
 
 **LoadJS** provides a way to load page-specific Javascript code in a Rails app without loosing the magic
