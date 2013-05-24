@@ -63,6 +63,11 @@ describe("#load", function() {
         load({controllers: {projects: ["edit", "update"]}}, loadFunction);
         expect(loadFunction).not.toHaveBeenCalled();
       });
+
+      it("loads { controllers: { foo: [], projects: ['new'] } }", function() {
+        load({ controllers: { foo: [], projects: ['new'] } }, loadFunction);
+        expect(loadFunction).toHaveBeenCalledWith("projects", "new");
+      });
     });
   });
 });

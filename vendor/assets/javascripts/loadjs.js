@@ -14,7 +14,7 @@ function load(options, fn) {
       for (var controller in options.controllers) {
         var actions = options.controllers[controller];
         if (controller != currentController) {
-          return;
+          continue;
         }
         if (actions.length == 0) {
           fn(currentController, currentAction);
