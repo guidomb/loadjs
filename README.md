@@ -32,7 +32,7 @@ tag:
   <head>
     ...
   </head>
-  <body data-controller="<%= controller.controller_name %>" data-action="<%= controller.action_name %>">
+  <body data-controller="<%= controller.controller_path %>" data-action="<%= controller.action_name %>">
     ...
   </body>
 </html>
